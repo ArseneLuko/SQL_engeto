@@ -1,18 +1,22 @@
-
-WITH avpr AS (
-	SELECT
-		ROUND(AVG(value),2) AS avg_price,
-		category_code,
-		YEAR(date_from) AS year
-	FROM czechia_price
-	GROUP BY category_code, YEAR(date_from)
-	)
-	SELECT
+-- 
+WITH avg_prices_for_years AS (
+	SELECT 
+		tf.price_avg,
+		tf.price_name,
+		tf.price_year
+	FROM t_Lukas_Karasek_project_SQL_primary_final tf
+	GROUP BY tf.price_name, tf.price_year
+	ORDER BY tf.price_name, tf.price_year;
+)
+SELECT 
+	*,
+	CASE
+		LAG OVER ()
+	END
 	
-	SELECT
-		ROUND(AVG(cp.value),2) AS avg_price,
-		cpc.name,
-		YEAR(cp.date_from) AS year
-	FROM czechia_price cp
-	INNER JOIN czechia_price_category cpc ON cp.category_code = cpc.code
-	GROUP BY cp.category_code, YEAR(cp.date_from);
+
+
+SELECT *
+FROM t_Lukas_Karasek_project_SQL_primary_final tf;
+
+

@@ -12,7 +12,7 @@ CREATE OR REPLACE VIEW v_avg_change_for_all_categories AS
 			tf.price_avg,
 			LAG(tf.price_avg) OVER (PARTITION BY tf.price_name ORDER BY tf.price_year) AS price_avg_previous_year
 		FROM t_Lukas_Karasek_project_SQL_primary_final tf
-		GROUP BY tf.price_name, tf.price_year
+		-- GROUP BY tf.price_name, tf.price_year
 		ORDER BY tf.price_name, tf.price_year
 	), 
 	percentage_change_per_years AS (
@@ -41,4 +41,6 @@ FROM v_avg_change_for_all_categories
 WHERE avg_percentage_change >= 0
 ORDER BY avg_percentage_change
 LIMIT 1;
+
+
 

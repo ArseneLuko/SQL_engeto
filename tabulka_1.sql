@@ -6,7 +6,7 @@
 
 -- vytvoří pohled s průměrným platem podle roku a odvětví (GROUP BY), rok a napojí tabulku s názvem odvětví
 
-CREATE OR REPLACE VIEW v_avg_payroll AS
+CREATE OR REPLACE VIEW v_Lukas_Karasek_avg_payroll AS
 	SELECT
 		ROUND(AVG(cp.value), 2) AS payroll_avg,
 		cp.payroll_year AS payroll_year,
@@ -22,7 +22,7 @@ CREATE OR REPLACE VIEW v_avg_payroll AS
 
 -- vytvořá pohled s pruměrnými cenami podle kategorie a roku (GROUP BY), názvem produktu a rokem
 
-CREATE OR REPLACE VIEW v_avg_price AS
+CREATE OR REPLACE VIEW v_Lukas_Karasek_avg_price AS
 	SELECT
 		ROUND(AVG(cp.value),2) AS price_avg,
 		cpc.name price_name,
@@ -38,7 +38,7 @@ CREATE OR REPLACE VIEW v_avg_price AS
 -- FINAL dotaz vytvoří tabulku napojením předchozích pohledů pomocí roku
 CREATE OR REPLACE TABLE t_Lukas_Karasek_project_SQL_primary_final
 	SELECT *
-	FROM v_avg_payroll vpy
-	INNER JOIN v_avg_price vpr ON vpy.payroll_year = vpr.price_year;
+	FROM v_Lukas_Karasek_avg_payroll vpy
+	INNER JOIN v_Lukas_Karasek_avg_price vpr ON vpy.payroll_year = vpr.price_year;
 -- KONEC
 	

@@ -1,6 +1,7 @@
 # SQL projekt pro Engeto kurz
 Sada SQL dotazů pro zodpovězení otázek, projekt pro Engeto kurz: Datový analytik s Pythonm
-Projekt: Data o mzdách a cenách potravin a jejich zpracování pomocí SQL
+Projekt: Data o mzdách a cenách potravin a jejich zpracování pomocí SQL<br>
+**Discord**: ```lukaskarasek__77224```
 
 ### Otázky
 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?

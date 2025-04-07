@@ -1,6 +1,7 @@
 -- Vytvoření první tabulky. Tabulky pojmenujte t_{jmeno}_{prijmeni}_project_SQL_primary_final 
 -- (pro data mezd a cen potravin za Českou republiku sjednocených na totožné porovnatelné období – společné roky)
 -- t_Lukas_Karasek_project_SQL_primary_final
+-- DISCORD: lukaskarasek__77224
 
 
 -- vytvoří pohled s průměrným platem podle roku a odvětví (GROUP BY), rok a napojí tabulku s názvem odvětví

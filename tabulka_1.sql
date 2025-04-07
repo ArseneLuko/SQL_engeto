@@ -46,6 +46,9 @@ CREATE OR REPLACE TABLE t_Lukas_Karasek_project_SQL_primary_final
 		vpy.payroll_avg, -- z pohledu vpy (payroll) vybere jen dva sloupce, ať neexistují zbytečně duplicitní sloupec pro roky
 		vpr.*
 	FROM v_Lukas_Karasek_avg_payroll vpy
-	INNER JOIN v_Lukas_Karasek_avg_price vpr ON vpy.payroll_year = vpr.price_year;
+	INNER JOIN v_Lukas_Karasek_avg_price vpr ON vpy.payroll_year = vpr.year;
+
+SELECT *
+FROM t_Lukas_Karasek_project_SQL_primary_final;
 
 	
